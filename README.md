@@ -63,8 +63,12 @@ void main() {
 In order to project the equirectangular map onto a compact equi-angular cubemap (EAC), 
 
 a) the former image is converted into an ordinary cubemap with six 2D sub-textures,
+<br />
 b) each face of this cubemap is mapped onto a face of an (empty) EAC, and finally,
+<br />
 c) the EAC is converted into a compact cubemap.
+<br />
+<br />
 
 Steps (a), (b) and (c) are executed by calling the Objective-C methods in sequence:
 ```objc
