@@ -13,6 +13,12 @@ A better distribution of the pixels across the cube face can be obtained for equ
 The trick is to re-map the pixels of a face of an ordinary cubemap texture using the *tan()* formula. Given below is a diagram indicating how this might be done.
 
 ![](Documentation/EACMath.png)
+<br />
+<br />
+
+The 2 graphics above were downloaded from an article posted at weblink 3
+<br />
+<br />
 
 Translation to GLSL.
 
@@ -122,17 +128,18 @@ This will produce a graphic of dimensions 3840 pixels (width) by 2160 pixels (he
 ![](Output/OutputER.png)
 
 
-
+<br />
+<br />
 **Requirements:** XCode 9.x, Swift 4.x and macOS 10.13.4 or later.
 <br />
 <br />
 
 **References:**
 
-a) http://paulbourke.net/panorama/cubemaps/
+1) http://paulbourke.net/panorama/cubemaps/
 
     "Pixel efficiency considerations"
 
-b) https://www.googblogs.com/2017/03/page/29/
+2) https://www.googblogs.com/2017/03/page/29/
 
-c) https://blog.google/products/google-ar-vr/bringing-pixels-front-and-center-vr-video/
+3) https://blog.google/products/google-ar-vr/bringing-pixels-front-and-center-vr-video/
