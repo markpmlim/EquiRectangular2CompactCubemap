@@ -71,6 +71,7 @@ c) the EAC is converted into a compact cubemap.
 <br />
 
 Steps (a), (b) and (c) are executed by calling the Objective-C methods in sequence:
+
 ```objc
     createCubemapTexture:withFaceSize:
     createEACTextureWithTexture:withFaceSize:
@@ -82,7 +83,7 @@ The initial equirectangular texture can be created by loading 8-bit or 16-bit im
 Note: while the faces of a cubemap texture must be squares, their common size need not be POT (powers-of-two). 
 
 
-The demo allows the user to save the final texture (a compact cubemap in the form of a 2D image) either as a .hdr or .png file. The user must set the *saveAsHDR* correctly.
+The demo allows the user to save the final texture (a compact cubemap in the form of a 2D image) either as a .hdr or .png file. The user must set the *saveAsHDR* correctly (cf viewDidLoad method of the ViewController).
 
 <br />
 <br />
