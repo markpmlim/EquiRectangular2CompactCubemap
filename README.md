@@ -72,7 +72,7 @@ a) the former image is converted into a standard cubemap with six 2D sub-texture
 <br />
 b) each face of this standard cubemap is then mapped onto a corresponding face of an (empty) EAC, and finally,
 <br />
-c) the EAC is converted into a compact cubemap. The ratio of the dimensions the 2D compact cubemap can be 3:2 or even 16:9
+c) the EAC is converted into a compact cubemap. The ratio of the dimensions of the 2D compact cubemap can be 3:2 or even 16:9.
 <br />
 <br />
 
@@ -94,7 +94,7 @@ Note: while the faces of a cubemap texture must be squares, their common size ne
 <br />
 <br />
 
-The demo allows the user to save the final texture (a compact cubemap in the form of a 2D image) either as a .hdr or .png image file. The user must set the *saveAsHDR* correctly (cf viewDidLoad method of the ViewController).
+The demo allows the user to save the final texture (a compact cubemap in the form of a 2D image) either as a *.hdr* or *.png* image file. The user must set the *saveAsHDR* correctly (cf viewDidLoad method of the ViewController).
 
 <br />
 <br />
@@ -107,11 +107,17 @@ The following 2 outputs are obtained using Paul Bourke's *jellybeans* image (web
 
 ![](Output/OutputJB1.png)
 
+<br />
+<br />
+
 The above graphic is produced by passing a standard cubemap texture to the create compact map method:
 
 ```objc
     createCompactmapTextureWithEACTexture:withResolution:
 ```
+
+<br />
+<br />
 
 With an EAC texture, the output produced is as follows:
 
@@ -122,6 +128,9 @@ With an EAC texture, the output produced is as follows:
 
 The resolution of the compact map for the first two output is set with the statement:
 
+<br />
+<br />
+
 ```objc
     CGSize resolutionEAC = CGSizeMake(3*faceSize, 2*faceSize);
 ```
@@ -130,10 +139,14 @@ The resolution of the compact map for the first two output is set with the state
 <br />
 
 If the ratio of the desired resolution is 16:9, it can be changed to:
+<br />
+<br />
 
 ```objc
     CGSize resolutionEAC = CGSizeMake(3*1280, 3*1280*9.0/16.0);
 ```
+<br />
+<br />
 
 This will produce a graphic of dimensions 3840 pixels (width) by 2160 pixels (height) i.e. a ratio of 16:9.
 
