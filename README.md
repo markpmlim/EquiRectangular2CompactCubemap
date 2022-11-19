@@ -37,8 +37,6 @@ Translation to GLSL.
 
 ```glsl
 
-<br />
-<br />
 
 in vec2 texCoords;
 
