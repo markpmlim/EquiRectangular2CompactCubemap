@@ -16,7 +16,7 @@ The trick is to re-map the pixels of a face of an ordinary cubemap texture using
 <br />
 <br />
 
-The 2 graphics above were downloaded from an article posted at web link 3
+(The 2 graphics above were downloaded from an article posted at web link 3)
 <br />
 <br />
 
