@@ -68,7 +68,7 @@ void main() {
 
 In order to project the equirectangular map onto a compact equi-angular cubemap (EAC), 
 
-a) the former image is converted into an standard cubemap with six 2D sub-textures,
+a) the former image is converted into a standard cubemap with six 2D sub-textures,
 <br />
 b) each face of this standard cubemap is then mapped onto a corresponding face of an (empty) EAC, and finally,
 <br />
@@ -84,7 +84,7 @@ Steps (a), (b) and (c) are executed by calling the Objective-C methods in sequen
     createCompactmapTextureWithEACTexture:withResolution:
 ```
 
-The initial equirectangular texture can be created from 8-bit or 16-bit images. Subsequent textures created have an OpenGL internal format of 32-bit floats if the demo is run on macOS. iOS' OpenGLES does not support 32-bit floats so these subsequent textures created with an internal format of 16-bit half floats.
+The initial equirectangular texture can be created from 8-bit or 16-bit images. Subsequent textures created have an OpenGL internal format of 32-bit floats if the demo is run on macOS. iOS' OpenGLES does not support 32-bit floats so these subsequent textures are created with an internal format of 16-bit half floats.
 
 <br />
 <br />
@@ -101,13 +101,13 @@ The demo allows the user to save the final texture (a compact cubemap in the for
 
 Outputs:
 
-The following 2 outputs are obtained using Paul Bourke's jellybeans image (web link 1).
+The following 2 outputs are obtained using Paul Bourke's *jellybeans* image (web link 1).
 <br />
 <br />
 
 ![](Output/OutputJB1.png)
 
-The above graphic is produced by passing an ordinary cubemap texture to the create compact map method
+The above graphic is produced by passing a standard cubemap texture to the create compact map method:
 
 ```objc
     createCompactmapTextureWithEACTexture:withResolution:
