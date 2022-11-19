@@ -10,7 +10,7 @@ Ordinary cubemaps which are projected from a spherical image onto the 6 faces of
 
 A better distribution of the pixels across the cube face can be obtained for equal angular change using an equi-angular Cubemap projection (see right side of diagram above).
 
-The trick is to re-map the pixels of a face of an ordinary cubemap texture using the *tan()* formula. Given below is a diagram indicating how this might be done.
+The trick is to re-map the pixels of a face of a standard cubemap texture using the *tan()* formula. Given below is a diagram indicating how this might be done.
 
 ![](Documentation/EACMath.png)
 <br />
