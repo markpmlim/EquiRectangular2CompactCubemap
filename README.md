@@ -16,7 +16,7 @@ The trick is to re-map the pixels of a face of an ordinary cubemap texture using
 <br />
 <br />
 
-The 2 graphics above were downloaded from an article posted at weblink 3
+The 2 graphics above were downloaded from an article posted at web link 3
 <br />
 <br />
 
@@ -96,7 +96,7 @@ The demo allows the user to save the final texture (a compact cubemap in the for
 
 Outputs:
 
-The following 2 outputs are obtained using Paul Bourke's jellybeans image.
+The following 2 outputs are obtained using Paul Bourke's jellybeans image (web link 1).
 <br />
 <br />
 
