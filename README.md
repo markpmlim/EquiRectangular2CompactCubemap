@@ -1,14 +1,24 @@
 ## Convert an Equirectangular image to an Equi-Angular compact cubemap image
 
+<br />
+<br />
 
 360-degree cameras convert a spherical image into an omnidirectional planar image called an equirectangular projection. The poles of the spherical image are mapped to the top and bottom edges and are stretched to the entire width of the planar image. As such, this type of projection contains a lot of redundant pixels amd distortions around the poles. The equator of the spherical image which corresponds to the area around the horizontal middle part of the planar image has relatively fewer pixels. There is also a higher distortion at the equatorial regions. Furthermore, the equatorial regions normally contains contents of interest to the viewer.
 
-Ordinary cubemaps which are projected from a spherical image onto the 6 faces of a cube, on the other hand, are much better. There are less redundancy at the poles but more pixels are used at the corners of the cube than in the centre. This is due to the tan() relationship between the angle and distance along the cube faces (see left side of diagram below).
+<br />
+<br />
+
+Ordinary cubemaps which are projected from a spherical image onto the 6 faces of a cube, on the other hand, are much better. There are less redundancy at the poles but more pixels are used at the corners of the cube than in the centre. This is due to the tan() relationship between the angle and distance along the cube faces (see left side of the diagram below).
+
+<br />
+<br />
 
 ![](Documentation/PixelDistribution.png)
 
+<br />
+<br />
 
-A better distribution of the pixels across the cube face can be obtained for equal angular change using an equi-angular Cubemap projection (see right side of diagram above).
+A better distribution of the pixels across the cube face can be obtained for equal angular change using an equi-angular Cubemap projection (see the right side of diagram above).
 
 The trick is to re-map the pixels of a face of a standard cubemap texture using the *tan()* formula. Given below is a diagram indicating how this might be done.
 
@@ -22,7 +32,13 @@ The trick is to re-map the pixels of a face of a standard cubemap texture using 
 
 Translation to GLSL.
 
+<br />
+<br />
+
 ```glsl
+
+<br />
+<br />
 
 in vec2 texCoords;
 
@@ -46,7 +62,13 @@ void main() {
 }
 ```
 
+<br />
+<br />
+
 Alternatively, the fragment shader could be coded as:
+
+<br />
+<br />
 
 ```glsl
 
@@ -66,8 +88,11 @@ void main() {
 }
 ```
 
-In order to project the equirectangular map onto a compact equi-angular cubemap (EAC), 
+<br />
+<br />
 
+In order to project the equirectangular map onto a compact equi-angular cubemap (EAC), 
+<br />
 a) the former image is converted into a standard cubemap with six 2D sub-textures,
 <br />
 b) each face of this standard cubemap is then mapped onto a corresponding face of an (empty) EAC, and finally,
