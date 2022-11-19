@@ -1,7 +1,7 @@
 ## Convert an Equirectangular image to an Equi-Angular compact cubemap image
 
 
-360-degree cameras convert a spherical image into an omnidirectional planar image called an equirectangular projection. The poles of the spherical image are mapped to the top and bottom edges and are stretched to the entire width of the planar image. As such, this type of projection contains a lot of redundant pixels amd distortions around the poles. The equator of the spherical image which corresponds to the area around the horizontal middle part of the planar image has relatively fewer pixels. There is also a higher distortion at the equatorial regions. The equatorial region normally contains contents of interest to the viewer.
+360-degree cameras convert a spherical image into an omnidirectional planar image called an equirectangular projection. The poles of the spherical image are mapped to the top and bottom edges and are stretched to the entire width of the planar image. As such, this type of projection contains a lot of redundant pixels amd distortions around the poles. The equator of the spherical image which corresponds to the area around the horizontal middle part of the planar image has relatively fewer pixels. There is also a higher distortion at the equatorial regions. Furthermore, the equatorial regions normally contains contents of interest to the viewer.
 
 Ordinary cubemaps which are projected from a spherical image onto the 6 faces of a cube, on the other hand, are much better. There are less redundancy at the poles but more pixels are used at the corners of the cube than in the centre. This is due to the tan() relationship between the angle and distance along the cube faces (see left side of diagram below).
 
@@ -72,7 +72,7 @@ a) the former image is converted into an ordinary cubemap with six 2D sub-textur
 <br />
 b) each face of this cubemap is mapped onto a face of an (empty) EAC, and finally,
 <br />
-c) the EAC is converted into a compact cubemap.
+c) the EAC is converted into a compact cubemap. The ratio of the dimensions can be 3:2 or even 16:9
 <br />
 <br />
 
