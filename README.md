@@ -6,21 +6,19 @@
 360-degree cameras convert a spherical image into an omnidirectional planar image called an equirectangular projection. The poles of the spherical image are mapped to the top and bottom edges and are stretched to the entire width of the planar image. As such, this type of projection contains a lot of redundant pixels amd distortions around the poles. The equator of the spherical image which corresponds to the area around the horizontal middle part of the planar image has relatively fewer pixels. There is also a higher distortion at the equatorial regions. Furthermore, the equatorial regions normally contains contents of interest to the viewer.
 
 <br />
-<br />
 
 Ordinary cubemaps which are projected from a spherical image onto the 6 faces of a cube, on the other hand, are much better. There are less redundancy at the poles but more pixels are used at the corners of the cube than in the centre. This is due to the tan() relationship between the angle and distance along the cube faces (see left side of the diagram below).
 
-<br />
 <br />
 
 ![](Documentation/PixelDistribution.png)
 
 <br />
-<br />
 
 A better distribution of the pixels across the cube face can be obtained for equal angular change using an equi-angular Cubemap projection (see the right side of diagram above).
 
 The trick is to re-map the pixels of a face of a standard cubemap texture using the *tan()* formula. Given below is a diagram indicating how this might be done.
+<br />
 
 ![](Documentation/EACMath.png)
 <br />
@@ -28,11 +26,8 @@ The trick is to re-map the pixels of a face of a standard cubemap texture using 
 
 (The 2 graphics above were downloaded from an article posted at web link 3)
 <br />
-<br />
 
 Translation to GLSL.
-
-<br />
 <br />
 
 ```glsl
@@ -61,11 +56,9 @@ void main() {
 ```
 
 <br />
-<br />
 
 Alternatively, the fragment shader could be coded as:
 
-<br />
 <br />
 
 ```glsl
@@ -110,27 +103,21 @@ Steps (a), (b) and (c) are executed by calling the Objective-C methods in sequen
 The initial equirectangular texture can be created from 8-bit or 16-bit images. Subsequent textures created have an OpenGL internal format of 32-bit floats if the demo is run on macOS. iOS' OpenGLES does not support 32-bit floats so these subsequent textures are created with an internal format of 16-bit half floats.
 
 <br />
-<br />
 
 Note: while the faces of a cubemap texture must be squares, their common size need not be POT (powers-of-two). 
 
 <br />
-<br />
-
 The demo allows the user to save the final texture (a compact cubemap in the form of a 2D image) either as a *.hdr* or *.png* image file. The user must set the *saveAsHDR* correctly (cf viewDidLoad method of the ViewController).
 
-<br />
 <br />
 
 Outputs:
 
 The following 2 outputs are obtained using Paul Bourke's *jellybeans* image (web link 1).
 <br />
-<br />
 
 ![](Output/OutputJB1.png)
 
-<br />
 <br />
 
 The above graphic is produced by passing a standard cubemap texture to the create compact map method:
@@ -140,40 +127,35 @@ The above graphic is produced by passing a standard cubemap texture to the creat
 ```
 
 <br />
-<br />
 
 With an EAC texture, the output produced is as follows:
 
 ![](Output/OutputJB2.png)
 
 <br />
-<br />
 
 The resolution of the compact map for the first two output is set with the statement:
 
 <br />
-<br />
+
 
 ```objc
     CGSize resolutionEAC = CGSizeMake(3*faceSize, 2*faceSize);
 ```
 
-<br />
-<br />
+
 
 If the ratio of the desired resolution is 16:9, it can be changed to:
-<br />
 <br />
 
 ```objc
     CGSize resolutionEAC = CGSizeMake(3*1280, 3*1280*9.0/16.0);
 ```
 <br />
-<br />
+
 
 This will produce a graphic of dimensions 3840 pixels (width) by 2160 pixels (height) i.e. a ratio of 16:9.
 
-<br />
 <br />
 
 ![](Output/OutputER.png)
