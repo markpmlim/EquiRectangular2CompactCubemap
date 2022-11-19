@@ -124,10 +124,10 @@ This will produce a graphic of dimensions 3840 pixels (width) by 2160 pixels (he
 
 **References:**
 
-http://paulbourke.net/panorama/cubemaps/
+a) http://paulbourke.net/panorama/cubemaps/
 
     "Pixel efficiency considerations"
 
-https://www.googblogs.com/2017/03/page/29/
+b) https://www.googblogs.com/2017/03/page/29/
 
-https://blog.google/products/google-ar-vr/bringing-pixels-front-and-center-vr-video/
+c) https://blog.google/products/google-ar-vr/bringing-pixels-front-and-center-vr-video/
