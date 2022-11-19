@@ -90,6 +90,10 @@ The demo allows the user to save the final texture (a compact cubemap in the for
 
 Outputs:
 
+The following 2 outputs are obtained using Paul Bourke's jellybeans image.
+<br />
+<br />
+
 ![](Output/OutputJB1.png)
 
 The above graphic is produced by passing an ordinary cubemap texture to the create compact map method
